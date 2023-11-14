@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace Punto_de_Venta_de_German
 {
-    public partial class FrmPuntodeVenta : Form
+    public partial class FrmPuntodeVenta : MetroFramework.Forms.MetroForm
     {
         public FrmPuntodeVenta()
         {
             InitializeComponent();
+            Bitmap img = new Bitmap(Application.StartupPath + @"\imgGerman\ExitSales.jpg");
+            
         }
     }
 }

@@ -1,0 +1,15 @@
+C:\Users\calon\Source\Repos\Punto_de_venta_Germansensei\Punto_de_Venta_de_German\bin\Debug\Punto_de_Venta_de_German.exe.config
+C:\Users\calon\Source\Repos\Punto_de_venta_Germansensei\Punto_de_Venta_de_German\bin\Debug\Punto_de_Venta_de_German.exe
+C:\Users\calon\Source\Repos\Punto_de_venta_Germansensei\Punto_de_Venta_de_German\bin\Debug\Punto_de_Venta_de_German.pdb
+C:\Users\calon\Source\Repos\Punto_de_venta_Germansensei\Punto_de_Venta_de_German\bin\Debug\MetroFramework.Design.dll
+C:\Users\calon\Source\Repos\Punto_de_venta_Germansensei\Punto_de_Venta_de_German\bin\Debug\MetroFramework.dll
+C:\Users\calon\Source\Repos\Punto_de_venta_Germansensei\Punto_de_Venta_de_German\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\calon\Source\Repos\Punto_de_venta_Germansensei\Punto_de_Venta_de_German\obj\Debug\Punto_de_Venta_de_German.csproj.AssemblyReference.cache
+C:\Users\calon\Source\Repos\Punto_de_venta_Germansensei\Punto_de_Venta_de_German\obj\Debug\Punto_de_Venta_de_German.csproj.SuggestedBindingRedirects.cache
+C:\Users\calon\Source\Repos\Punto_de_venta_Germansensei\Punto_de_Venta_de_German\obj\Debug\Punto_de_Venta_de_German.FrmPuntodeVenta.resources
+C:\Users\calon\Source\Repos\Punto_de_venta_Germansensei\Punto_de_Venta_de_German\obj\Debug\Punto_de_Venta_de_German.Properties.Resources.resources
+C:\Users\calon\Source\Repos\Punto_de_venta_Germansensei\Punto_de_Venta_de_German\obj\Debug\Punto_de_Venta_de_German.csproj.GenerateResource.cache
+C:\Users\calon\Source\Repos\Punto_de_venta_Germansensei\Punto_de_Venta_de_German\obj\Debug\Punto_de_Venta_de_German.csproj.CoreCompileInputs.cache
+C:\Users\calon\Source\Repos\Punto_de_venta_Germansensei\Punto_de_Venta_de_German\obj\Debug\Punto_de_Venta_de_German.csproj.CopyComplete
+C:\Users\calon\Source\Repos\Punto_de_venta_Germansensei\Punto_de_Venta_de_German\obj\Debug\Punto_de_Venta_de_German.exe
+C:\Users\calon\Source\Repos\Punto_de_venta_Germansensei\Punto_de_Venta_de_German\obj\Debug\Punto_de_Venta_de_German.pdb
