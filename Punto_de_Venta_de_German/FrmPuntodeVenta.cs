@@ -18,5 +18,10 @@ namespace Punto_de_Venta_de_German
             Bitmap img = new Bitmap(Application.StartupPath + @"\imgGerman\ExitSales.jpg");
             
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
