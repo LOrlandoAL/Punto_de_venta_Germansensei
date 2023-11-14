@@ -321,7 +321,7 @@
             this.Descuento});
             this.dataGridView1.Location = new System.Drawing.Point(18, 273);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1134, 315);
+            this.dataGridView1.Size = new System.Drawing.Size(1148, 315);
             this.dataGridView1.TabIndex = 20;
             // 
             // label6
