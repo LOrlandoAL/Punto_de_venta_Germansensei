@@ -165,20 +165,11 @@ namespace Punto_de_Venta_de_German
                             return;
                         }
                     }
-                    //double total = cantidad * p.price;
-                    //carro.Add(new venta(id, code, p.name, cantidad, p.price, total));
-                    //dgvCarro.DataSource = null;
-                    //dgvCarro.DataSource = carro;
-                    //dgvCarro.Columns["Id"].Visible = false;
-                    //this.total = 0;
-                    //for (int i = 0; i < carro.Count; i++)
-                    //{
-                    //    this.total += carro[i].Total;
-                    //}
-                    //txtCantidad.Text = "1";
-                    //lblSubtotal.Text = "Subtotal: $" + this.total;
-                    //lblIVA.Text = "IVA: $" + this.total * iva;
-                    //lblTotal.Text = "Total: $" + (this.total + this.total * iva);
+                    double total = cantidad * p.UnitPrice;
+                    CarritoDeCompras.Add(new venta(id, code, p.ProductName, cantidad, p.UnitPrice, total));
+                    dgvProductos.DataSource = null;
+                    dgvProductos.DataSource = CarritoDeCompras;
+                    dgvProductos.Columns["Id"].Visible = false;
                 }
             }
             else
