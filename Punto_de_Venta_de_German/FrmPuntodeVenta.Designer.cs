@@ -47,12 +47,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.lblEmpleado = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -71,7 +66,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
@@ -118,7 +113,7 @@
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(112, 58);
             this.button9.TabIndex = 8;
-            this.button9.Text = "Edit\r\n(F9)";
+            this.button9.Text = "Finalizar\r\n(F9)";
             this.button9.UseVisualStyleBackColor = false;
             // 
             // button10
@@ -303,55 +298,15 @@
             this.label4.TabIndex = 19;
             this.label4.Text = "Total Discounts";
             // 
-            // dataGridView1
+            // dgvProductos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.Producto,
-            this.Precio,
-            this.Cantidad,
-            this.Descuento});
-            this.dataGridView1.Location = new System.Drawing.Point(17, 239);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(504, 249);
-            this.dataGridView1.TabIndex = 20;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.Width = 125;
-            // 
-            // Producto
-            // 
-            this.Producto.HeaderText = "Producto";
-            this.Producto.MinimumWidth = 6;
-            this.Producto.Name = "Producto";
-            this.Producto.Width = 125;
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.MinimumWidth = 6;
-            this.Precio.Name = "Precio";
-            this.Precio.Width = 125;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.MinimumWidth = 6;
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.Width = 125;
-            // 
-            // Descuento
-            // 
-            this.Descuento.HeaderText = "Descuento %";
-            this.Descuento.MinimumWidth = 6;
-            this.Descuento.Name = "Descuento";
-            this.Descuento.Width = 125;
+            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductos.Location = new System.Drawing.Point(17, 239);
+            this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dgvProductos.RowHeadersWidth = 51;
+            this.dgvProductos.Size = new System.Drawing.Size(504, 249);
+            this.dgvProductos.TabIndex = 20;
             // 
             // lblEmpleado
             // 
@@ -468,7 +423,7 @@
             // 
             this.txtCodigo.Location = new System.Drawing.Point(137, 203);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(342, 20);
+            this.txtCodigo.Size = new System.Drawing.Size(233, 20);
             this.txtCodigo.TabIndex = 33;
             this.txtCodigo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Enter);
             // 
@@ -478,7 +433,7 @@
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(108, 23);
             this.btnBuscar.TabIndex = 34;
-            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.Text = "Agregar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.BotonBuscar);
             // 
@@ -507,7 +462,7 @@
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblEmpleado);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvProductos);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox4);
@@ -527,7 +482,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -552,13 +507,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.Label lblEmpleado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descuento;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label5;

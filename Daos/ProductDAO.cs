@@ -79,7 +79,7 @@ namespace Datos
             {
                 try
                 {
-                    string query = "SELECT Productid, ProductName, UnitPrice FROM Products WHERE Productid = @Productid";
+                    string query = "SELECT Productid, ProductName, UnitPrice, UnitsInStock FROM Products WHERE Productid = @Productid";
                     MySqlCommand sentencia = new MySqlCommand();
                     sentencia.Parameters.AddWithValue("@Productid", Productid);
                     sentencia.CommandText = query;
@@ -93,7 +93,8 @@ namespace Datos
                             {
                                 ProductID = reader.GetInt32("Productid"),
                                 ProductName = reader.GetString("ProductName"),
-                                UnitPrice = reader.GetDouble("UnitPrice")
+                                UnitPrice = reader.GetDouble("UnitPrice"),
+                                UnitsInStock = reader.GetInt32("UnitsInStock")
                             };
                         }
                     }

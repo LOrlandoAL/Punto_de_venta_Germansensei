@@ -10,14 +10,17 @@ using System.Windows.Forms;
 using Daos;
 using Datos;
 using Modelos;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace Punto_de_Venta_de_German
 {
     public partial class FrmPuntodeVenta : Form
     {
+        private int id = 0;
         //Decllaracion de listas paara llenarlas de datos mas adelante.
         public static List<Productos> Productos;
         public static List<Customers> Clientes;
+        private List<venta> CarritoDeCompras = new List<venta>();
         public FrmPuntodeVenta()
         {
             InitializeComponent();
@@ -69,7 +72,9 @@ namespace Punto_de_Venta_de_German
 
             if (p != null)
             {
-                MessageBox.Show(p.ProductName + " " + p.UnitPrice);
+                AgregarATabla(p);
+                //MessageBox.Show(p.ProductName + " " + p.UnitPrice + " " + p.UnitsInStock);
+
             }
             else
             {
@@ -79,7 +84,108 @@ namespace Punto_de_Venta_de_German
 
         private void BotonBuscar(object sender, EventArgs e)
         {
+            ProductDAO dao = new ProductDAO();
+            Productos p = new Productos();
             BuscarPorCodigo();
+        }
+
+        private void AgregarATabla(Productos p)
+        {
+            bool bandera = false;
+            int cantidad = 1;
+            id++;
+            //int.TryParse(txtCantidad.Text, out cantidad)
+            if (cantidad != 0)
+            {
+                string code = "";
+                if (txtCodigo.Text.Length < 13)
+                {
+                    code = txtCodigo.Text;
+                    for (int i = 0; i < 13 - txtCodigo.Text.Length; i++)
+                    {
+                        code = "0" + code;
+                    }
+                }
+
+                for (int i = 0; i < CarritoDeCompras.Count; i++)
+                {
+                    if (Int32.Parse(CarritoDeCompras[i].Product) == p.ProductID)
+                    {
+                        CarritoDeCompras[i].Quantity += cantidad;
+
+
+                        if (CarritoDeCompras[i].Quantity > p.UnitsInStock)
+                        {
+                            DialogResult resultado = MetroFramework.MetroMessageBox.Show(this, "Solo se cuenta con " + p.UnitsInStock + " unidades del producto " + p.ProductName + " ¿desea adquirirlas?", "Confirmación", MessageBoxButtons.OKCancel, MessageBoxIcon.Information, 120);
+                            if (resultado == DialogResult.OK)
+                            {
+                                CarritoDeCompras[i].Quantity = p.UnitsInStock;
+                            }
+                            else
+                            {
+                                //txtCantidad.Text = "1";
+                                return;
+                            }
+
+                        }
+
+                        double total2 = CarritoDeCompras[i].Quantity * p.UnitPrice;
+                        CarritoDeCompras[i].Total = total2;
+                        dgvProductos.DataSource = null;
+                        dgvProductos.DataSource = CarritoDeCompras;
+                        dgvProductos.Columns["Id"].Visible = false;
+                        bandera = true;
+                        break;
+                    }
+                }
+                if (bandera)
+                {
+                    //this.total = 0;
+                    for (int i = 0; i < CarritoDeCompras.Count; i++)
+                    {
+                        //this.total += CarritoDeCompras[i].Total;
+                    }
+                    //txtCantidad.Text = "1";
+                    //lblSubtotal.Text = "Subtotal: $" + this.total;
+                    //lblIVA.Text = "IVA: $" + this.total * iva;
+                    //lblTotal.Text = "Total: $" + (this.total + this.total * iva);
+                }
+                else
+                {
+                    if (cantidad > p.UnitsInStock)
+                    {
+                        DialogResult resultado = MetroFramework.MetroMessageBox.Show(this, "Solo se cuenta con " + p.UnitsInStock + " unidades del producto " + p.ProductName + " ¿desea adquirirlas?", "Confirmación", MessageBoxButtons.OKCancel, MessageBoxIcon.Information, 120);
+                        if (resultado == DialogResult.OK)
+                        {
+                            cantidad = p.UnitsInStock;
+                        }
+                        else
+                        {
+                            //txtCantidad.Text = "1";
+                            return;
+                        }
+                    }
+                    //double total = cantidad * p.price;
+                    //carro.Add(new venta(id, code, p.name, cantidad, p.price, total));
+                    //dgvCarro.DataSource = null;
+                    //dgvCarro.DataSource = carro;
+                    //dgvCarro.Columns["Id"].Visible = false;
+                    //this.total = 0;
+                    //for (int i = 0; i < carro.Count; i++)
+                    //{
+                    //    this.total += carro[i].Total;
+                    //}
+                    //txtCantidad.Text = "1";
+                    //lblSubtotal.Text = "Subtotal: $" + this.total;
+                    //lblIVA.Text = "IVA: $" + this.total * iva;
+                    //lblTotal.Text = "Total: $" + (this.total + this.total * iva);
+                }
+            }
+            else
+            {
+                MetroFramework.MetroMessageBox.Show(this, "Cantidad invalida", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning, 120);
+            }
+            //txtProducto.Text = "";
         }
     }
 }
